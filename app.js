@@ -125,3 +125,12 @@ const inputobj = {
 };
 
 console.log("number of properties:", countProperties(inputobj));
+
+//6. Change the background color of the webpage when a button is clicked.
+
+const buttonColorEL = document.querySelector(".color-button");
+
+buttonColorEL.addEventListener("click", () => {
+  const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  document.body.style.backgroundColor = randomColor;
+});
