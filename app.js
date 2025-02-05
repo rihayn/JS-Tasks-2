@@ -73,3 +73,22 @@ async function getDataFromAPI() {
   }
 }
 getDataFromAPI();
+
+//Create a function to sort an array of numbers and display the sorted list.
+
+function sortedArr(theArr) {
+  for (let j = 0; j < theArr.length; j++) {
+    for (let i = 0; i < theArr.length - j; i++) {
+      if (theArr[i] > theArr[i + 1]) {
+        let temp = theArr[i];
+        theArr[i] = theArr[i + 1];
+        theArr[i + 1] = temp;
+      }
+    }
+  }
+
+  return theArr;
+}
+
+const input2 = [4, 9, 32, 12, 6, 8];
+console.log(sortedArr(input2));
