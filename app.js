@@ -92,3 +92,36 @@ function sortedArr(theArr) {
 
 const input2 = [4, 9, 32, 12, 6, 8];
 console.log(sortedArr(input2));
+
+/*5. Object Property Counter: Write a function that counts how many properties an 
+object has, including nested objects. */
+
+function countProperties(obj) {
+  let count = 0;
+
+  function counter(myObj) {
+    for (let key in myObj) {
+      if (myObj.hasOwnProperty(key)) {
+        count++;
+        if (typeof myObj[key] === "object" && myObj[key] !== null) {
+          counter(myObj[key]);
+        }
+      }
+    }
+  }
+
+  counter(obj);
+  return count;
+}
+
+// Example usage
+const inputobj = {
+  name: "Reyhane",
+  id: "Rihayn",
+  number: {
+    number: 9123456789,
+    code: "098",
+  },
+};
+
+console.log("number of properties:", countProperties(inputobj));
