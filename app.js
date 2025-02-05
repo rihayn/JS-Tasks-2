@@ -34,3 +34,42 @@ function flattenNums(array) {
 
 const input1 = [1, [2, [3, [4]], 5]];
 console.log(flattenNums(input1));
+
+/*3. Random Joke Generator: Create a button that fetches a random joke from
+Chuck Norris API and shows a loading state while fetching.*/
+
+const buttonEL = document.querySelector(".joke-button");
+
+buttonEL.addEventListener("click", getDataFromAPI);
+const pEL = document.createElement("p");
+pEL.classList.add("joke-paragraph");
+pEL.textContent = "";
+
+const jokeEL = document.createElement("div");
+jokeEL.classList.add("joke-box");
+jokeEL.remove();
+
+async function getDataFromAPI() {
+  const loadEl = document.querySelector(".joke-loading");
+  loadEl.style.display = "block";
+
+  try {
+    const url = "https://api.chucknorris.io/jokes/random";
+    const response = await fetch(url, {
+      method: "GET",
+    });
+    const jokes = await response.json();
+    const containerEL = document.querySelector(".joke-container");
+
+    loadEl.style.display = "none";
+
+    pEL.textContent = jokes.value;
+
+    jokeEL.append(pEL);
+    containerEL.append(jokeEL);
+    console.log(jokes);
+  } catch (error) {
+    console.log(error);
+  }
+}
+getDataFromAPI();
