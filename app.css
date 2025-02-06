@@ -89,9 +89,79 @@
     padding: 10px;
     font-family: sans-serif;
   }
-  .timer{
+  .timer {
     color: rgb(0, 0, 0);
     font-size: 30px;
     font-family: sans-serif;
   }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+.card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 10px;
+
+  .delete-button {
+    width: 100px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(112, 124, 126);
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 10px;
+    padding: 10px;
+    font-family: sans-serif;
+    border-radius: 5px;
+  }
+}
+.cardTitle {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(190, 200, 202);
+  padding: 5px;
+}
+.cardContent {
+  width: 300px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(190, 200, 202);
+  margin: 20px 0;
+  padding: 5px;
+}
+.generateButton {
+  width: 100px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: rgb(112, 124, 126);
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 10px;
+  padding: 10px;
+  font-family: sans-serif;
+  margin-top: 20px;
+  border-radius: 5px;
 }

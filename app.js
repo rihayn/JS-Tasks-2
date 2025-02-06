@@ -155,3 +155,43 @@ buttonTimerEL.addEventListener("click", function () {
     }
   }, 1000);
 });
+
+// 8. Card Generator: Create a function that generates a card element with a title,
+// content, and a delete button.
+
+document
+  .querySelector(".generateButton")
+  .addEventListener("click", function () {
+    const title = document.querySelector(".cardTitle").value;
+    const content = document.querySelector(".cardContent").value;
+
+  
+      createCard(title, content);
+      document.querySelector(".cardTitle").value = "";
+      document.querySelector(".cardContent").value = "";
+    
+  });
+
+function createCard(title, content) {
+  const cardContainer = document.querySelector(".cardContainer");
+
+  const card = document.createElement("div");
+  card.className = "card";
+
+  const cardTitle = document.createElement("h3");
+  cardTitle.textContent = title;
+
+  const cardContent = document.createElement("p");
+  cardContent.textContent = content;
+
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.className = "delete-button";
+  deleteButton.addEventListener("click", function () {
+    cardContainer.removeChild(card);
+  });
+
+  card.append(cardTitle,cardContent,deleteButton);
+
+  cardContainer.append(card);
+}
