@@ -134,3 +134,24 @@ buttonColorEL.addEventListener("click", () => {
   const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
   document.body.style.backgroundColor = randomColor;
 });
+
+/*7. Create a simple countdown timer that counts down from a specified number 
+of seconds. */
+
+const buttonTimerEL = document.querySelector(".startButton");
+buttonTimerEL.addEventListener("click", function () {
+  let countdownSeconds = 5;
+  const timerDisplay = document.querySelector(".timer");
+
+  timerDisplay.textContent = countdownSeconds;
+
+  const countdownInterval = setInterval(function () {
+    countdownSeconds--;
+    timerDisplay.textContent = countdownSeconds;
+
+    if (countdownSeconds <= 0) {
+      clearInterval(countdownInterval);
+      timerDisplay.textContent = "Time's up!";
+    }
+  }, 1000);
+});
