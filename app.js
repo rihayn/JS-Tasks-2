@@ -244,3 +244,27 @@ const stringArray = ["apple", "banana", "cherry", "date"];
 const transformedArray = transformArrayToObjects(stringArray);
 
 console.log(transformedArray);
+
+/*11. Element Frequency Counter: Create a function that counts the frequency of 
+elements in an array and returns an object with the counts. 
+Example Input: ['a', 'b', 'a', 'c', 'b', ‘a'] 
+Expected Output: { a: 3, b: 2, c: 1 } */
+
+function countElementFrequency(arr) {
+  const frequencyCounter = {};
+
+  arr.forEach((element) => {
+    if (frequencyCounter[element]) {
+      frequencyCounter[element]++;
+    } else {
+      frequencyCounter[element] = 1;
+    }
+  });
+
+  return frequencyCounter;
+}
+
+const inputArray = ["a", "b", "a", "c", "b", "a"];
+const frequencyCount = countElementFrequency(inputArray);
+
+console.log(frequencyCount);
