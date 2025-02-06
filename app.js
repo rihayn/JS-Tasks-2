@@ -269,6 +269,8 @@ const frequencyCount = countElementFrequency(inputArray);
 
 console.log(frequencyCount);
 
+/*12. User Data Display: Create a webpage that fetches and displays user data 
+from JSONPlaceholder. Display each user's name and email in a card layout.*/
 async function fetchUserData() {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/users");
