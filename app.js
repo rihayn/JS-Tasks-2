@@ -268,3 +268,36 @@ const inputArray = ["a", "b", "a", "c", "b", "a"];
 const frequencyCount = countElementFrequency(inputArray);
 
 console.log(frequencyCount);
+
+async function fetchUserData() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+    const users = await response.json();
+    renderUserCards(users);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+function renderUserCards(users) {
+  const cardContainer = document.querySelector(".card-container");
+  users.forEach((user) => {
+    const card = document.createElement("div");
+    card.classList.add("user-card");
+
+    const name = document.createElement("div");
+    name.classList.add("user-name");
+    name.textContent = user.name;
+
+    const email = document.createElement("div");
+    email.classList.add("user-detail");
+    email.textContent = user.email;
+
+    card.append(name, email);
+    cardContainer.append(card);
+  });
+}
+
+// Call the function to fetch user data when the page loads
+fetchUserData();

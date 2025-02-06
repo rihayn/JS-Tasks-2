@@ -72,7 +72,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  row-gap: 30px;
   align-items: center;
   .startButton {
     width: 200px;
@@ -165,3 +165,55 @@ body {
   margin-top: 20px;
   border-radius: 5px;
 }
+
+
+
+
+
+.user-title {
+    text-align: center;
+    margin: 20px 0;
+    color: #343a40;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 100px;
+}
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+        .user-card {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        
+        
+        .user-name {
+            font-size: 18px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        
+        .user-detail {
+            font-size: 16px;
+            color: #495057;
+            margin: 5px 0;
+        }
+    }
+    
+}
+
+
