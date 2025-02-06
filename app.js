@@ -165,11 +165,9 @@ document
     const title = document.querySelector(".cardTitle").value;
     const content = document.querySelector(".cardContent").value;
 
-  
-      createCard(title, content);
-      document.querySelector(".cardTitle").value = "";
-      document.querySelector(".cardContent").value = "";
-    
+    createCard(title, content);
+    document.querySelector(".cardTitle").value = "";
+    document.querySelector(".cardContent").value = "";
   });
 
 function createCard(title, content) {
@@ -191,7 +189,42 @@ function createCard(title, content) {
     cardContainer.removeChild(card);
   });
 
-  card.append(cardTitle,cardContent,deleteButton);
+  card.append(cardTitle, cardContent, deleteButton);
 
   cardContainer.append(card);
 }
+
+/*9. Email Validator: Create a function that checks if a string contains a valid email 
+pattern using string methods (no regex).*/
+
+function isValidEmail(email) {
+  const symbolIndex = email.indexOf("@");
+  if (symbolIndex === -1) {
+    return false;
+  }
+
+  if (symbolIndex === 0) {
+    return false;
+  }
+
+  const dotIndex = email.indexOf(".", symbolIndex);
+  if (dotIndex === -1) {
+    return false;
+  }
+
+  if (dotIndex === email.length - 1) {
+    return false;
+  }
+
+  if (dotIndex - symbolIndex <= 1) {
+    return false;
+  }
+
+  return true;
+}
+
+const email1 = "email@email.com";
+const email2 = "email.email@.com";
+
+console.log(isValidEmail(email1));
+console.log(isValidEmail(email2));
