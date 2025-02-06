@@ -228,3 +228,19 @@ const email2 = "email.email@.com";
 
 console.log(isValidEmail(email1));
 console.log(isValidEmail(email2));
+
+/*10. Array Transformation: Create a function that transforms an array of strings 
+into an array of objects with a length property.*/
+
+function transformArrayToObjects(strings) {
+  return strings.map((str) => {
+    return {
+      length: str.length,
+    };
+  });
+}
+
+const stringArray = ["apple", "banana", "cherry", "date"];
+const transformedArray = transformArrayToObjects(stringArray);
+
+console.log(transformedArray);
